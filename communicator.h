@@ -19,7 +19,7 @@ using namespace std;
 enum GomokuRule{ rlFreeStyle = 0, rlStandard = 1, rlFreeStyleContinual = 2, rlStandardContinual = 3 };
 
 #define CPPWIN32DLL_API
-#define PRODUCT_VER_STRING "2.1"
+#define PRODUCT_VER_STRING "2.1.1"
 #define GIT_BRANCH_STR "N/A"
 #define GIT_SHA_STR "N/A"
 #define DEFAULT_RULE rlFreeStyle

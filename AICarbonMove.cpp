@@ -69,7 +69,9 @@ void AICarbon::start(int bsize)
   lowerRightCand = OXPoint(x + 1, y + 1);
   
   table.clear();
-  move(boardSize / 2, boardSize / 2);
+
+  //18.10. 2015 Petr Lastovicka: this needs to be commented out for use as a gomocup engine
+  //move(boardSize / 2, boardSize / 2);
 }
 // ----------------------------------------------------------------------------
 // xp, yp in <0, boardSize)
