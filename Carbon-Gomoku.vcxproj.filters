@@ -27,6 +27,48 @@
     <ClInclude Include="GomocupInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OXGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OXLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OXPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OXTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AISimple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AICarbon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AICarbonHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="communicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stopwatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarbonGomocupEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -72,6 +114,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GomocupInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="communicator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stopwatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CarbonGomocupEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

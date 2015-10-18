@@ -2,10 +2,13 @@
 //
 
 #include "stdafx.h"
+#include "CarbonGomocupEngine.h"
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	CarbonGomocupEngine engine;
+	engine.Run();
 	return 0;
 }
 

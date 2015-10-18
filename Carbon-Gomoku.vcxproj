@@ -56,6 +56,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackCommitSize>
+      </StackCommitSize>
+      <AdditionalOptions>/STACK:10000000,10000000 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,15 +82,31 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AICarbon.h" />
+    <ClInclude Include="AICarbonHash.h" />
+    <ClInclude Include="AISimple.h" />
+    <ClInclude Include="CarbonGomocupEngine.h" />
+    <ClInclude Include="communicator.h" />
     <ClInclude Include="GomocupInterface.h" />
+    <ClInclude Include="OXGame.h" />
+    <ClInclude Include="OXLog.h" />
+    <ClInclude Include="OXPlayer.h" />
+    <ClInclude Include="OXTypes.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stopwatch.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AICarbon.cpp" />
     <ClCompile Include="AICarbonMove.cpp" />
     <ClCompile Include="AISimple.cpp" />
     <ClCompile Include="Carbon-Gomoku.cpp" />
+    <ClCompile Include="CarbonGomocupEngine.cpp" />
+    <ClCompile Include="communicator.cpp" />
     <ClCompile Include="CONFIG.CPP" />
     <ClCompile Include="COUNT5.CPP" />
     <ClCompile Include="GomocupInterface.cpp" />
@@ -99,6 +118,8 @@
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="STATUS1.CPP" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="stopwatch.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
