@@ -21,7 +21,7 @@
 
 enum LNUM {A = 8, B = 7, C = 6, D = 5, E = 4, F = 3, G = 2, H = 1};
 
-const BSIZE = MAX_BOARD_SIZE + 8;
+const int BSIZE = MAX_BOARD_SIZE + 8;
 
 // makro imitujace petle, w ktorej przypisuje wartoscia zmiannych x, y typu
 // short wspolrzedne kolejnych kandydatow na ruch

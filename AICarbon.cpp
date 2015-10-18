@@ -1,7 +1,7 @@
 #include "AICarbon.h"
 #include "OXLog.h"
 #include "Timer.h"
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
