@@ -29,6 +29,7 @@ int StringToInt(const string& str)
 Communicator::Communicator()
 {
 	_boardCommand = false;
+	_run = true;
 }
 
 Communicator::~Communicator()
@@ -50,7 +51,7 @@ void Communicator::Run()
 	bool fileInput = false;
 	in = &cin;
 
-	while(run)
+	while (_run)
 	{
 		line.clear();
 		if(in->eof() )
@@ -197,7 +198,7 @@ string Communicator::ProcessCommand(string command, string arguments)
 	}
 	else if( command == "end")
 	{
-		run = false;
+		_run = false;
 		return string();
 	}
 	else if(command == "about")

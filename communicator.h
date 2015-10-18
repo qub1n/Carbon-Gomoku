@@ -28,7 +28,7 @@ class Communicator;
 //implements gomocup protocol
 class CPPWIN32DLL_API Communicator
 {
-	bool run;
+	bool _run;
 	bool _boardCommand;
 	string line;
     
