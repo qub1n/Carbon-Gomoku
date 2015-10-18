@@ -50,7 +50,24 @@ string CarbonGomocupEngine::Begin()
 
 string CarbonGomocupEngine::Board(list<list<unsigned int> > mix)
 {
-	return "ERROR Board command not Supported";
+	//lastField = opponentsField;
+	list<unsigned int> line;
+	while (mix.size() > 0)
+	{
+		line = mix.front();
+		unsigned int x = line.front();
+		line.pop_front();
+		unsigned int y = line.front();
+		line.pop_front();
+		unsigned int fieldType = line.front();
+		//AddMove(x, y, fieldType);
+
+		_carbonEngine.move(x, y);
+
+		mix.pop_front();
+	}
+	return GetAndPlayBest();
+	//return "ERROR Board command not Supported";
 }
 
 string CarbonGomocupEngine::RectStart(unsigned int width, unsigned int height)
