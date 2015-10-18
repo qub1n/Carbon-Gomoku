@@ -1,3 +1,11 @@
+//----------------------------------------------------------------------------//
+//                       ported from Hewer Engine for Gomocup                 //
+//                       Tomas Kubes <kubes.tomas@gmail.com>                  //
+//----------------------------------------------------------------------------//
+//                 Gomocup Wrapper around a Carbon Gomocu engine              //
+//----------------------------------------------------------------------------//
+
+
 #pragma once
 
 #include "communicator.h"
@@ -5,16 +13,16 @@
 
 using namespace std;
 
+void WriteLog(int value, int search, int speed);
 
 class CarbonGomocupEngine : public Communicator
 {
-	AICarbon _carbonEngine;
-	int _depth;	
+	AICarbon _carbonEngine;	
 	int _boardSize;
 
 	string GetAndPlayBest(void);
 public:
-	CarbonGomocupEngine(int depth);
+	CarbonGomocupEngine();
 	~CarbonGomocupEngine();
 
 	string Turn(unsigned int x, unsigned int y);

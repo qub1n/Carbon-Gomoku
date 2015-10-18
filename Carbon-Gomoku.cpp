@@ -6,10 +6,8 @@
 
 
 int _tmain(int argc, _TCHAR* argv[])
-{
-	int depth = 9;
-
-	CarbonGomocupEngine engine(depth);
+{	
+	CarbonGomocupEngine engine;
 	engine.Run();
 	return 0;
 }

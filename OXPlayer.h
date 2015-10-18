@@ -9,6 +9,12 @@
 #ifndef _OXPlayer
 #define _OXPlayer
 
+struct SearchResult
+{
+	int value;
+	int Nodes;
+};
+
 class OXPlayer
 {
   public:
@@ -19,7 +25,7 @@ class OXPlayer
     virtual void move(int x, int y) = 0;
     
     // polecenie wybrania ruchu przez AI
-    virtual void yourTurn(int &x, int &y, int depth = 0, int time = 0) = 0;
+	virtual SearchResult yourTurn(int &x, int &y, int depth = 0, int time = 0) = 0;
     
     // nie wykorzystywane
     virtual void think() {};

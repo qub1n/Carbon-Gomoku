@@ -1,23 +1,15 @@
-#include "stdafx.h"
+//----------------------------------------------------------------------------//
+//                       ported from Hewer Engine for Gomocup                 //
+//                       Tomas Kubes <kubes.tomas@gmail.com>                  //
+//----------------------------------------------------------------------------//
+//    This module is Stopwatch implementation. TODO replace by chrono         //
+//----------------------------------------------------------------------------//
 
+#include "stdafx.h"
 #include "stopwatch.h"
 #include <ostream>
 using namespace std;
 
-//---------------------------------------------------------------------------
-/*unsigned long StopWatch::Now(){
-    timeb timer2;
-    ::ftime(&timer2);
-    unsigned long miliseconds = (unsigned long)(timer2.time*1000 + timer2.millitm);
-    return miliseconds;
-}*/
-
-/*ostream& StopWatch::NowReadable(ostream & out){
-   char buff[256];
-   _strtime(buff);   
-   out << buff;
-   return out;
-}*/
 //---------------------------------------------------------------------------
 void StopWatch::Start(){
     ::ftime(&timer);

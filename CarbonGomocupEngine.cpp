@@ -1,5 +1,19 @@
+//----------------------------------------------------------------------------//
+//                       ported from Hewer Engine for Gomocup                 //
+//                       Tomas Kubes <kubes.tomas@gmail.com>                  //
+//----------------------------------------------------------------------------//
+//                 Gomocup Wrapper around a Carbon Gomocu engine             //
+//----------------------------------------------------------------------------//
+
 #include "CarbonGomocupEngine.h"
 #include "coord.h"
+
+#include <chrono>
+
+void WriteLog(int value, int searched, int speed)
+{
+	//std::cout << "MESSAGE val=" << value << " searched=" << searched << " speed=" << speed << std::endl;
+}
 
 string ResponseCoords(unsigned int x, unsigned int y)
 {
@@ -13,9 +27,44 @@ string CarbonGomocupEngine::GetAndPlayBest()
 	int x = 0;
 	int y = 0;
 
+	//TODO replace simple time management by something better
+	int branchingFactorEstimation = 5;
+
 	int time = _timeManager.GetTimeoutTurn();
 
-	_carbonEngine.yourTurn(x, y, _depth, time);
+	auto start = std::chrono::high_resolution_clock::now();
+	auto timeBefore = start;
+
+	int maxDepth = 30;
+	SearchResult searchResult;
+
+	for (int depth = 0; depth < maxDepth; depth++)
+	{		
+		searchResult =_carbonEngine.yourTurn(x, y, depth, time);
+
+		//cout << "DEBUG depth = " << depth << " [" << x << "," << y << "]" << endl;
+
+		auto timeAfter = std::chrono::high_resolution_clock::now();
+
+		auto durationIterationMiliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(timeAfter - timeBefore);
+
+		auto durationAllMiliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(timeAfter - start);		
+		
+		auto remaining = time - durationAllMiliseconds.count();	
+
+		if (durationAllMiliseconds.count() > time)
+			break;					
+		
+		if (remaining < branchingFactorEstimation * durationIterationMiliseconds.count())
+			break;
+
+		timeBefore = timeAfter;
+
+		if (depth < maxDepth- 1)
+			_carbonEngine.undo();
+	}	
+
+	cout << "DEBUG value = " << searchResult.value << " nodes = " << searchResult.Nodes << endl;
 
 	string response = ResponseCoords(x, y);
 
@@ -23,9 +72,8 @@ string CarbonGomocupEngine::GetAndPlayBest()
 
 }
 
-CarbonGomocupEngine::CarbonGomocupEngine(int depth)
-{
-	_depth = depth;
+CarbonGomocupEngine::CarbonGomocupEngine()
+{	
 	_boardSize = 20;	
 
 	_carbonEngine.start(_boardSize);

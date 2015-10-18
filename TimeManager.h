@@ -1,3 +1,10 @@
+//----------------------------------------------------------------------------//
+//                       ported from Hewer Engine for Gomocup                 //
+//                       Tomas Kubes <kubes.tomas@gmail.com>                  //
+//----------------------------------------------------------------------------//
+//    This module is used to compute how much time can be spent by engine     //
+//----------------------------------------------------------------------------//
+
 #ifndef TIMEMANAGER_H
 #define TIMEMANAGER_H
 #include "stdafx.h"

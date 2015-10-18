@@ -1,3 +1,10 @@
+//----------------------------------------------------------------------------//
+//                       Hewer Engine for Gomocup                             //
+//                       Tomas Kubes <kubes.tomas@gmail.com>                  //
+//----------------------------------------------------------------------------//
+//               Base class for comunication in Gomocup format                //
+//----------------------------------------------------------------------------//
+
 #include "communicator.h"
 
 #include <iostream>
@@ -204,7 +211,7 @@ string Communicator::ProcessCommand(string command, string arguments)
 	else if(command == "about")
 	{
 		return string("name=\"Carbon Gomoku\", version=\"") + string(PRODUCT_VER_STRING) +
-			string("\", build=\"") + string(GIT_BRANCH_STR) + string("_") + string(GIT_SHA_STR) + string("\", author=\"Tomas Kubes\", email=\"kubes.tomas@gmail.com\", country=\"Czech Republic\", builded=\"") + string(__DATE__) + " " + string(__TIME__) + string("\"");
+			string("\", build=\"") + string(GIT_BRANCH_STR) + string("_") + string(GIT_SHA_STR) + string("\", author=\"Michal Czardybon\", email=\"mczard@poczta.onet.pl\", country=\"Poland\", builded=\"") + string(__DATE__) + " " + string(__TIME__) + string("\"");
 	}
 	else if(command == "turn")
 	{

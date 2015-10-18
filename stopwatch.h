@@ -1,3 +1,10 @@
+//----------------------------------------------------------------------------//
+//                       ported from Hewer Engine for Gomocup                 //
+//                       Tomas Kubes <kubes.tomas@gmail.com>                  //
+//----------------------------------------------------------------------------//
+//    This module is Stopwatch implementation. TODO replace by chrono         //
+//----------------------------------------------------------------------------//
+
 #ifndef STOPWATCH_H
 #define STOPWATCH_H
 #include "stdafx.h"

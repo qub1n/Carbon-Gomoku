@@ -32,7 +32,7 @@ class AISimple : public OXPlayer
     
     void start(int size);
     void move(int x, int y);
-    void yourTurn(int &x, int &y, int depth = 0, int time = 0);
+	SearchResult yourTurn(int &x, int &y, int depth = 0, int time = 0);
     void undo(); 
     const char* name() const    {return "AI - Simple (24.11.2001)";}
 

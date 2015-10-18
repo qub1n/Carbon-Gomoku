@@ -80,7 +80,7 @@ void AICarbon::init()
       PRIOR[a][b] = getPrior(a, b);
 }
 // ----------------------------------------------------------------------------
-void AICarbon::yourTurn(int &x, int &y, int depth, int time)
+SearchResult AICarbon::yourTurn(int &x, int &y, int depth, int time)
 {
 
 	//TODO - add time control (iterative deepening)
@@ -107,6 +107,11 @@ void AICarbon::yourTurn(int &x, int &y, int depth, int time)
   assert(!(x < 0 || x >= boardSize || y < 0 || y >= boardSize));
   
   move(x, y);
+
+  SearchResult result{ m.value, nSearched };
+
+  return result;
+
 }
 // ----------------------------------------------------------------------------
 int AICarbon::evaluate()

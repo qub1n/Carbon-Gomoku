@@ -1,5 +1,6 @@
 #include "AISimple.h"
 #include "Random.h"
+#include <limits>
 
 #define NOTEMPTY(x, y) (game.cell(x, y) != EMPTY && game.cell(x, y) != WRONG)
 #define FREE(x, y)     (game.cell(x, y) == who || game.cell(x, y) == EMPTY)
@@ -20,7 +21,7 @@ void AISimple::undo()
   game.undo();
 }
 
-void AISimple::yourTurn(int &x, int &y, int, int)
+SearchResult AISimple::yourTurn(int &x, int &y, int, int)
 {
   int i, j;
   int val, valA, valB;
@@ -33,7 +34,14 @@ void AISimple::yourTurn(int &x, int &y, int, int)
           valA = evalCell(i, j, game.player());
           valB = evalCell(i, j, OPPONENT(game.player()));    
           val = valA + valB + _random(4);
-          if (valA == 100000) {x = i; y = j; game.move(x, y); return;} // wygrywam!
+          if (valA == 100000) 
+		  {
+			  x = i;
+			  y = j;
+			  game.move(x, y);
+			  SearchResult searchResult{ std::numeric_limits<int>::max(), 1 };
+			  return searchResult;
+		  } // wygrywam!
           if (valB == 2000) val = 80000; // przeciwnik ma niekryta 3-ke
           if (valA == 2000) val = 90000; // mam niekryta 3-ke
           if (val > best)
@@ -43,6 +51,9 @@ void AISimple::yourTurn(int &x, int &y, int, int)
             }
         }
   game.move(x, y);
+
+  SearchResult searchResult{ val, 1 };
+  return searchResult;
 }
 
 // Sprawdza, czy warto brac to pole pod uwage,

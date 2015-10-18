@@ -42,13 +42,15 @@ struct OXMove
 
 typedef OXMove OXCand; // kandydat na ruch
 
+
+
 class AICarbon : public OXPlayer
 {
   public:    
    
     void start(int size);
     void move(int x, int y);
-    void yourTurn(int &x, int &y, int depth = 0, int time = 0);
+	SearchResult yourTurn(int &x, int &y, int depth = 0, int time = 0);
     void undo(); 
     const char* name() const {return "AICarbon";}
 
