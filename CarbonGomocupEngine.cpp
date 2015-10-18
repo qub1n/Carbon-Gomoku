@@ -23,9 +23,9 @@ string CarbonGomocupEngine::GetAndPlayBest()
 
 }
 
-CarbonGomocupEngine::CarbonGomocupEngine()
+CarbonGomocupEngine::CarbonGomocupEngine(int depth)
 {
-	_depth = 7;	
+	_depth = depth;
 	_boardSize = 20;	
 
 	_carbonEngine.start(_boardSize);

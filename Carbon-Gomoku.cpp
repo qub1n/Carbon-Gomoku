@@ -7,7 +7,9 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	CarbonGomocupEngine engine;
+	int depth = 9;
+
+	CarbonGomocupEngine engine(depth);
 	engine.Run();
 	return 0;
 }

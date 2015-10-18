@@ -14,7 +14,7 @@ class CarbonGomocupEngine : public Communicator
 
 	string GetAndPlayBest(void);
 public:
-	CarbonGomocupEngine();
+	CarbonGomocupEngine(int depth);
 	~CarbonGomocupEngine();
 
 	string Turn(unsigned int x, unsigned int y);

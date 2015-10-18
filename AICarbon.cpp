@@ -82,6 +82,9 @@ void AICarbon::init()
 // ----------------------------------------------------------------------------
 void AICarbon::yourTurn(int &x, int &y, int depth, int time)
 {
+
+	//TODO - add time control (iterative deepening)
+
   Timer t;
   OXMove m(0, 0, 0);
 
